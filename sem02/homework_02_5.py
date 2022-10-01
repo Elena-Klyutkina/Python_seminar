@@ -1,14 +1,20 @@
 # Реализуйте алгоритм перемешивания списка. Без функции shuffle из модуля random.
 # 10
 # -> [0,1,2,3,4,5,6,7,8,9]
-# -> [7,5,3,4,5,2,8,6,9,0]
+# -> [7,5,3,4,1,2,8,6,9,0]
 
-n = int(input('Number of elements: '))
-arr = [i for i in range(n)]
-print(arr)
+import os
+import random
 
-k = -1
+# # Очистка терминала для удобства восприятия.
+os.system('cls')
 
-for i in range(len(arr)//2):
-    arr[k], arr[i] = arr[i], arr[k]
-print(arr)
+# # Реализуйте алгоритм перемещения списка. Без функции shuffle из модуля random
+
+basic_array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(f'Исходный массив:\n {basic_array}')
+
+random_array = []
+for i in range(len(basic_array)):
+    random_array.append(basic_array.pop(random.randint(0, len(basic_array)-1)))
+print(f'Перемешанный массив:\n {random_array}')
